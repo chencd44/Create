@@ -70,7 +70,7 @@ repositories {
     maven("https://maven.fabricmc.net") // FAPI, Loader
     maven("https://maven.createmod.net") // Ponder, Flywheel
     maven("https://mvn.devos.one/snapshots") // Registrate, Forge Tags, Milk Lib
-    maven("https://raw.githubusercontent.com/Fuzss/modresources/main/maven") // Forge Config API Port
+    maven("https://raw.github.com/Fuzss/modresources/main/maven") // Forge Config API Port
     maven("https://maven.shedaniel.me") // REI and deps
     maven("https://api.modrinth.com/maven") { // LazyDFU, Sodium, Sandwichable
         content { includeGroupAndSubgroups("maven.modrinth") }
@@ -83,6 +83,7 @@ repositories {
     }
     maven("https://maven.ladysnake.org/releases") // CCA, for Trinkets
     maven("https://maven.saps.dev/releases") // FTB
+    maven("https://cursemaven.com")
     maven("https://maven.architectury.dev") // Architectury API
     maven("https://jm.gserv.me/repository/maven-public/") // Journey map
 }
@@ -135,9 +136,12 @@ dependencies {
 
     // FIXME - Use gradle.properties for these versions, make change to concealed for this
     modCompileOnly("dev.architectury:architectury-fabric:9.1.12")
-    modCompileOnly("dev.ftb.mods:ftb-chunks-fabric:2001.3.1")
-    modCompileOnly("dev.ftb.mods:ftb-teams-fabric:2001.3.0")
-    modCompileOnly("dev.ftb.mods:ftb-library-fabric:2001.2.4")
+    //modCompileOnly("dev.ftb.mods:ftb-chunks-fabric:2001.3.1")
+    //modCompileOnly("dev.ftb.mods:ftb-teams-fabric:2001.3.0")
+    //modCompileOnly("dev.ftb.mods:ftb-library-fabric:2001.2.4")
+	modImplementation("curse.maven:ftb-teams-fabric-438497:6119436")
+	modImplementation("curse.maven:ftb-chunks-fabric-472657:6295697")
+	modImplementation("curse.maven:ftb-library-fabric-438495:6304124")    
 
     modCompileOnly("maven.modrinth:journeymap:$jmVersion")
     modCompileOnly("info.journeymap:journeymap-api:$jmApiVersion")
